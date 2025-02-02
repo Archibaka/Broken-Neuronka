@@ -1,0 +1,308 @@
+#include "Arduino.h"
+#include "Network.h"
+
+    Network::Network(vector<int> s){
+	sizes = s;
+	num_layers = sizes.size();
+	srand(num_layers);
+		for (int ls = 1; ls < num_layers; ls++){
+			vector<vector<long double>> sb;
+			vector<vector<long double>> sw;
+			for(int nw = 0; nw < sizes[ls]; nw++){
+				vector<long double> ssb;
+				vector<long double> ssw;
+				for(int pr = 0; pr < sizes[ls-1]; pr++){
+						ssb.push_back((2*rand()/RAND_MAX)-2);
+						ssw.push_back((2*rand()/RAND_MAX)-2);
+				}
+				sb.push_back(ssb);
+				sw.push_back(ssw);
+			}
+			biases.push_back(sb);
+			weights.push_back(sw);
+		}
+    }
+    Network::Network(vector<int> s, vector<vector<vector<long double>>> b, vector<vector<vector<long double>>> w){
+	sizes = s;
+	biases = b;
+	weights = w;
+    }
+    
+    vector<long double> Network::feedForward(Network& net, vector<long double> in) {
+       vector<long double> prev = in;
+       vector<long double> out;
+        prev.resize(sizes[0], 1);
+        for (int ls = 1; ls < num_layers; ls++) {
+            for (int nw = 0; nw < sizes[ls]; nw++) {
+                long double d = 0;
+                for (int pr = 0; pr < sizes[ls - 1]; pr++) {
+                        d += prev[pr]*net.weights[ls-1][nw][pr] + net.biases[ls-1][nw][pr];
+                }
+                out.push_back(d);
+            }
+            prev = out;
+            out.clear();
+        }
+        return prev;
+    }
+
+    void Network::train(Network& net, long double eta, vector<vector<vector<long double>>> data, int mbsize, int hm, int step) {
+        vector<vector<vector<vector<long double>>>> miniBatches;
+        if (hm > 0) {
+            for (int e = 0; e < hm; e++) {
+                random_shuffle(data.begin(), data.end());
+                vector<vector<vector<long double>>> t;
+                for (unsigned int s = 0; s < data.size(); s++) {
+                    data[s].resize(2);
+                    data[s][0].resize(sizes[0]);
+                    data[s][1].resize(sizes[sizes.size()-1]);
+                    t.push_back(data[s]);
+                    if (s % mbsize == 0) {
+                        miniBatches.push_back(t);
+                    }
+                }
+                for (unsigned int m = 0; m < miniBatches.size(); m++) {
+                    Network::upd(net, eta, miniBatches[m]);
+                }
+                if (step == 2){
+                    std::cout <<"Epoch {";
+                    std::cout << e+1;
+                    std::cout << "} :  ";
+                    std::cout << gitgood(net, data);
+                    std::cout << "/";
+                    std::cout << data.size();
+                    std::cout << "\n";
+                }else{
+                    std::cout << "Epoch {";
+                    std::cout << e+1;
+                    std::cout << "/";
+                    std::cout << hm;
+                    std::cout << "} complete\n";
+                }
+            }
+        }
+    }
+
+    void Network::upd(Network& net, long double eta, vector<vector<vector<long double>>> mb) {
+        //biases.size() = weights.size() = num_layers
+        vector<vector<vector<long double>>> nbb = Network::shape(Network::biases);
+        vector<vector<vector<long double>>> nbw = Network::shape(Network::weights);
+
+        for (unsigned int i = 0; i < mb.size(); i++) {
+            vector<vector<vector<long double>>> deltaNablB = Network::backprop(net, mb[i][0], mb[i][1])[0];
+            vector<vector<vector<long double>>> deltaNablW = Network::backprop(net, mb[i][0], mb[i][1])[1];
+            for (unsigned int m = 0; m < nbb.size(); m++) {
+                for (unsigned int n = 0; n < nbb[m].size(); n++) {
+                    for (unsigned int s = 0; s < nbb[m][n].size(); s++) {
+                        nbb[m][n][s] = nbb[m][n][s] + deltaNablB[m][n][s];
+                        nbw[m][n][s] = nbb[m][n][s] + deltaNablW[m][n][s];
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < num_layers-1; i++) {
+            for (unsigned int j = 0; j < weights[i].size(); j++) {
+                for (unsigned int k = 0; k < weights[i][j].size(); k++) {
+                    net.weights[i][j][k] = net.weights[i][j][k] - (eta / mb.size()) * nbb[i][j][k];
+                    net.biases[i][j][k] = net.biases[i][j][k] - (eta / mb.size()) * nbw[i][j][k];
+                }
+            }
+        }
+    }
+
+    vector<vector<vector<vector<long double>>>>backprop(Network& net, vector<long double> a, vector<long double> got) {
+        static vector<vector<vector<vector<long double>>>> spitted;
+        static vector<vector<vector<long double>>> nbb = Network::shape(Network::biases);
+        static vector<vector<vector<long double>>> nbw = Network::shape(Network::weights);
+        //feedforward
+        vector<long double> act = a;
+        act.resize(sizes[0], 1);
+        vector<vector<long double>> acts;
+        acts.push_back(act);
+        vector<vector<long double>> zs;
+        vector<long double> z;
+        for (int ls = 1; ls < num_layers; ls++) {
+            for (int nw = 0; nw < sizes[ls]; nw++) {
+                long double d = 0;
+                for (int pr = 0; pr < sizes[ls - 1]; pr++) {
+                    d += act[pr] * net.weights[ls-1][nw][pr] + net.biases[ls-1][nw][pr];
+                }
+                z.push_back(d);
+            }
+            zs.push_back(z);
+            act = Network::specialFunc(z);
+            acts.push_back(act);
+            z.clear();
+        }
+
+        // backward pass
+        static vector<vector<long double>> delta = Network::mult(Network::costDer(acts[acts.size() - 1], got), Network::derFunc(zs[zs.size() - 1]));
+        nbb[nbb.size() - 1] = delta;
+        nbw[nbw.size() - 1] = Network::dotProd(acts[acts.size() - 2], delta);
+
+        for (int l = num_layers-2; l > 0; l--) {
+            delta = Network::transpose(Network::mult(Network::dotProd(Network::transpose(weights[weights.size() - l - 1]), delta), Network::derFunc(zs[zs.size() - l])));
+            nbb[nbb.size() - l] = delta;
+            nbw[nbw.size() - l] = Network::dotProd(acts[acts.size() - l - 1], delta);
+        }
+
+        spitted.push_back(nbb);
+        spitted.push_back(nbw);
+        return spitted;
+    }
+
+
+    long double gitgood(Network& net, vector<vector<vector<long double>>> testData) {
+        long double rate = 0;
+        vector<vector<long double>> res;
+        vector<long double> sb;
+        for (unsigned int i = 0; i < testData.size(); i++) {
+            if (Network::maxArg(Network::feedForward(net, testData[i][0])) == round(testData[i][1][0])) {
+                rate++;
+            }
+        }
+        return rate;
+    }
+
+    vector<long double> costDer(vector<long double> a, vector<long double> got) {
+        vector<long double> res;
+
+        for (unsigned int gg = 0; gg < got.size(); gg++) {
+            res.push_back(a[gg] - got[gg]);
+        }
+        return res;
+    }
+
+    vector<long double> specialFunc(vector<long double> z) {
+        vector<long double> s;
+        for (unsigned int i = 0; i < z.size(); i++) {
+            s.push_back(1 / (1 + exp(-z[i])));
+        }
+        return s;
+    }
+    long double specialFunc(long double z) {
+        return 1 / (1 + exp(-z));
+    }
+
+    vector<long double> derFunc(vector<long double> z) {
+        vector<long double> sig = specialFunc(z);
+        vector<long double> s;
+        for (unsigned int i = 0; i < z.size(); i++) {
+            s.push_back(sig[i] * (1 - sig[i]));
+        }
+        return s;
+    }
+
+    //numpy funcs analogs
+    int maxArg(vector<long double> a) {
+        int max = 0;
+        for (unsigned int i = 0; i < a.size(); i++) {
+            if (a[max] < a[i]) {
+                max = i;
+            }
+        }
+        return max;
+    }
+
+    vector<vector<long double>> transpose(vector<vector<long double>> st) {
+        static vector<vector<long double>> ed;
+        ed.resize(st[0].size());
+        for (unsigned int i = 0; i < st[0].size(); i++) {
+            ed[i].resize(st.size());
+        }
+        for (unsigned int i = 0; i < st[0].size(); i++) {
+            for (unsigned int j = 0; j < st.size(); j++) {
+                ed[i][j] = st[j][i];
+            }
+        }
+        return ed;
+    }
+
+    vector<vector<long double>> dotProd(vector<long double> f, vector<vector<long double>> s) {
+        vector<vector<long double>> result;
+        vector<long double> res;
+        for (unsigned int i = 0; i < s.size(); i++) {
+            for (unsigned int j = 0; j < s[i].size(); j++) {
+                if (i < f.size()) {
+                    res.push_back(f[i] * s[i][j]);
+                }
+                else {
+                    res.push_back(0);
+                }
+            }
+            result.push_back(res);
+            res.clear();
+        }
+
+        return result;
+    }
+    vector<long double> dotProd(vector<vector<long double>>f, vector<vector<long double>> s) {
+        vector<long double> result;
+        if (f.size() > s.size()){
+            s.resize(f.size());
+        }
+        else {
+            if (s.size() > f.size()) {
+                f.resize(s.size());
+            }
+        }
+        for (unsigned int i = 0; i < f.size(); i++) {
+            result.push_back(dotProd(f[i], s[i]));
+        }
+        return result;
+    }
+    long double dotProd(vector<long double> f, vector<long double> s) {
+        long double result = 0;
+        if (f.size() > s.size()){
+            s.resize(f.size());
+        }
+        else {
+            if (s.size() > f.size()) {
+                f.resize(s.size());
+            }
+        }
+        for (unsigned int i = 0; i < f.size(); i++) {
+            result += f[i] * s[i];
+        }
+
+        return result;
+    }
+
+    vector<vector<long double>> shape(vector<vector<long double>> in) {
+        vector<vector<long double>> out;
+        out.resize(in.size());
+        for (unsigned int s = 0; s < out.size(); s++) {
+            out[s].resize(in[s].size());
+        }
+        return out;
+    }
+
+    vector<vector<vector<long double>>> shape(vector<vector<vector<long double>>> in) {
+        vector<vector<vector<long double>>> out;
+        out.resize(in.size());
+        for (unsigned int s = 0; s < out.size(); s++) {
+            out[s] = Network::shape(in[s]);
+        }
+        return out;
+    }
+
+    vector<long double> mult(vector<long double> f, long double s) {
+        vector<long double> result;
+        for (unsigned int i = 0; i < f.size(); i++) {
+            result.push_back(f[i] * s);
+        }
+        return result;
+    }
+    vector<vector<long double>> mult(vector<long double> f, vector<long double> s) {
+        vector<vector<long double>> result;
+        for (unsigned int i = 0; i < f.size(); i++) {
+            vector<long double> t;
+            for (unsigned int j = 0; j < s.size(); j++) {
+                t.push_back(f[i] * s[j]);
+            }
+            result.push_back(t);
+            t.clear();
+        }
+        return result;
+    }

@@ -1,0 +1,42 @@
+#ifndef Network_h
+#define Network_h
+
+#include <ArduinoSTL.h>
+#include "Arduino.h"
+using namespace std;
+class Network
+{
+  public:
+    Network(vector<int> s);
+    Network(vector<int> s, vector<vector<vector<long double>>> b, vector<vector<vector<long double>>> w);
+	
+    vector<long double> feedForward(vector<long double> in);
+    void train(long double eta, vector<vector<vector<long double>>> data, int mbsize, int hm, int step);
+    void upd(long double eta, vector<vector<vector<long double>>> mb);
+    vector<vector<vector<vector<long double>>>> backprop(vector<long double> a, vector<long double> got);
+    long double gitgood(vector<vector<vector<long double>>> testData);
+    vector<long double> costDer(vector<long double> a, vector<long double> got);
+	
+    vector<long double> specialFunc(vector<long double> z);
+    long double specialFunc(long double z);
+	
+    vector<long double> derFunc(vector<long double> z);
+    //numpy shit
+    int maxArg(vector<long double> a);
+	
+    vector<vector<long double>> transpose(vector<vector<long double>> st);
+	
+	vector<long double> dotProd(vector<vector<long double>>f, vector<vector<long double>> s);
+    vector<long double> dotProd(vector<long double> f, vector<vector<long double>> s);
+    long double dotProd(vector<long double> f, vector<long double> s);
+	
+    vector<long double> mult(vector<long double> f, long double s);
+    vector<vector<long double>> mult(vector<long double> f, vector<long double> s);
+	
+    int num_layers;
+    vector<vector<vector<long double>>> biases;
+    vector<vector<vector<long double>>> weights;
+    vector<int> sizes;
+};
+
+#endif
