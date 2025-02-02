@@ -1,0 +1,469 @@
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:1:13: warning: unknown pragma ignored [clang-diagnostic-unknown-pragmas]
+#pragma GCC optimize("O3, fast-math")
+            ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:2:13: warning: unknown pragma ignored [clang-diagnostic-unknown-pragmas]
+#pragma GCC target("avx2")
+            ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:20:37: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<vector<long double>>> biases;
+                                    ^~
+                                    > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:21:37: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<vector<long double>>> weights;
+                                    ^~
+                                    > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:26:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> b;
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:27:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> w;
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:31:28: warning: implicit conversion loses integer precision: 'std::vector<int>::size_type' (aka 'unsigned long long') to 'int' [clang-diagnostic-shorten-64-to-32]
+        num_layers = sizes.size();
+                   ~ ~~~~~~^~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:32:26: warning: implicit conversion changes signedness: 'int' to 'unsigned int' [clang-diagnostic-sign-conversion]
+        srand(num_layers + rand());
+        ~~~~~ ~~~~~~~~~~~^~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:34:38: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+            vector<vector<long double>> sb;
+                                     ^~
+                                     > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:35:38: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+            vector<vector<long double>> sw;
+                                     ^~
+                                     > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:36:42: warning: comparison of integers of different signs: 'unsigned int' and 'int' [clang-diagnostic-sign-compare]
+            for (unsigned int nw = 0; nw < sizes[ls]; nw++) {
+                                      ~~ ^ ~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:36:50: warning: implicit conversion changes signedness: 'int' to 'std::vector<int>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+            for (unsigned int nw = 0; nw < sizes[ls]; nw++) {
+                                           ~~~~~ ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:39:52: warning: implicit conversion changes signedness: 'int' to 'std::vector<int>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                for (int64_t pr = 0; pr < sizes[ls - 1]; pr++) {
+                                          ~~~~~ ~~~^~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:54:26: warning: implicit conversion loses integer precision: 'std::vector<int>::size_type' (aka 'unsigned long long') to 'int' [clang-diagnostic-shorten-64-to-32]
+        num_layers = szs.size();
+                   ~ ~~~~^~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:61:45: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+            vector<vector<vector<long double>>> txt;
+                                            ^~
+                                            > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:62:38: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+            vector<vector<long double>> subtxt;
+                                     ^~
+                                     > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:65:25: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+            for (char c : line) {
+                        ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:67:36: warning: implicit conversion loses integer precision: 'long long' to 'int' [clang-diagnostic-shorten-64-to-32]
+                    size.push_back(atoll(buf.c_str()));
+                         ~~~~~~~~~ ^~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:82:41: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+                            for (char c : line) {
+                                        ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:130:21: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+        prev.resize(static_cast<int>(sizes[0]), 1);
+             ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:132:45: warning: implicit conversion changes signedness: 'int64_t' (aka 'long long') to 'std::vector<int>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+            for (int64_t nw = 0; nw < sizes[ls]; nw++) {
+                                      ~~~~~ ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:134:52: warning: implicit conversion changes signedness: 'long long' to 'std::vector<int>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                for (int64_t pr = 0; pr < sizes[ls - 1]; pr++) {
+                                          ~~~~~ ~~~^~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:135:51: warning: implicit conversion changes signedness: 'int64_t' (aka 'long long') to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = specFunc(prev[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr]);
+                                             ~~~~ ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:135:68: warning: implicit conversion changes signedness: 'long long' to 'std::vector<std::vector<std::vector<long double>>>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = specFunc(prev[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr]);
+                                                        ~~~~~~~ ~~~^~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:135:73: warning: implicit conversion changes signedness: 'int64_t' (aka 'long long') to 'std::vector<std::vector<long double>>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = specFunc(prev[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr]);
+                                                        ~~~~~~~         ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:135:77: warning: implicit conversion changes signedness: 'int64_t' (aka 'long long') to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = specFunc(prev[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr]);
+                                                        ~~~~~~~             ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:135:93: warning: implicit conversion changes signedness: 'long long' to 'std::vector<std::vector<std::vector<long double>>>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = specFunc(prev[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr]);
+                                                                                  ~~~~~~ ~~~^~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:135:98: warning: implicit conversion changes signedness: 'int64_t' (aka 'long long') to 'std::vector<std::vector<long double>>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = specFunc(prev[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr]);
+                                                                                  ~~~~~~         ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:135:102: warning: implicit conversion changes signedness: 'int64_t' (aka 'long long') to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = specFunc(prev[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr]);
+                                                                                  ~~~~~~             ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:148:65: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    void train(long double eta, vector<vector<vector<long double>>> data, int mbsize, int hm, int step, long double lmbda) {
+                                                                ^~
+                                                                > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:149:48: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<vector<long double>>>> miniBatches;
+                                               ^~
+                                               > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:149:50: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<vector<long double>>>> miniBatches;
+                                                 ^~
+                                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:152:66: warning: constructor call from initializer list is incompatible with C++98 [clang-diagnostic-c++98-compat]
+            shuffle(begin(data), end(data), default_random_engine{});
+                                                                 ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:152:66: warning: generalized initializer lists are incompatible with C++98 [clang-diagnostic-c++98-compat]
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:153:45: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+            vector<vector<vector<long double>>> t;
+                                            ^~
+                                            > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:157:39: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    data[s][0].resize(static_cast<int>(sizes[0]));
+                               ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:158:39: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    data[s][1].resize(static_cast<int>(sizes[sizes.size() - 1]));
+                               ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:160:29: warning: implicit conversion changes signedness: 'int' to 'unsigned int' [clang-diagnostic-sign-conversion]
+                    if (s % mbsize == 0 && s != 0) {
+                          ~ ^~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:185:40: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+                    for (long double r : feedForward(data[0][0])) {
+                                       ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:192:63: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    void upd(long double eta, vector<vector<vector<long double>>> mb, long double lmbda, int sz) {
+                                                              ^~
+                                                              > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:194:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> nbb = shape(biases);
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:195:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> nbw = shape(weights);
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:196:48: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<vector<long double>>>> d;
+                                               ^~
+                                               > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:196:50: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<vector<long double>>>> d;
+                                                 ^~
+                                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:209:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> changeW;
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:210:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> changeB;
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:211:36: warning: comparison of integers of different signs: 'unsigned int' and 'int' [clang-diagnostic-sign-compare]
+        for (unsigned int i = 0; i < num_layers - 1; i++) {
+                                 ~ ^ ~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:212:38: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+            vector<vector<long double>> w;
+                                     ^~
+                                     > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:213:38: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+            vector<vector<long double>> b;
+                                     ^~
+                                     > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:218:97: warning: implicit conversion from 'std::vector<std::vector<std::vector<long double>>>::size_type' (aka 'unsigned long long') to 'long double' may lose precision [clang-diagnostic-implicit-int-float-conversion]
+                    ww.insert(ww.end(), (1 - eta * (lmbda / sz)) * weights[i][j][k] - (eta / mb.size()) * nbw[i][j][k]);
+                                                                                           ~ ~~~^~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:219:69: warning: implicit conversion from 'std::vector<std::vector<std::vector<long double>>>::size_type' (aka 'unsigned long long') to 'long double' may lose precision [clang-diagnostic-implicit-int-float-conversion]
+                    bb.insert(bb.end(), biases[i][j][k] - (eta / mb.size()) * nbb[i][j][k]);
+                                                               ~ ~~~^~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:232:44: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<vector<vector<long double>>>>backprop(vector<long double> a, vector<long double> got) {
+                                           ^~
+                                           > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:232:46: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<vector<vector<long double>>>>backprop(vector<long double> a, vector<long double> got) {
+                                             ^~
+                                             > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:233:48: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<vector<long double>>>> spitted;
+                                               ^~
+                                               > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:233:50: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<vector<long double>>>> spitted;
+                                                 ^~
+                                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:234:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> nbb = shape(biases);
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:235:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> nbw = shape(weights);
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:238:20: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+        act.resize(static_cast<int>(sizes[0]), 1);
+            ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:239:34: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<long double>> acts;
+                                 ^~
+                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:241:34: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<long double>> zs;
+                                 ^~
+                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:245:41: warning: implicit conversion changes signedness: 'int' to 'std::vector<int>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+            for (int nw = 0; nw < sizes[ls]; nw++) {
+                                  ~~~~~ ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:247:48: warning: implicit conversion changes signedness: 'int' to 'std::vector<int>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                for (int pr = 0; pr < sizes[ls - 1]; pr++) {
+                                      ~~~~~ ~~~^~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:248:41: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = act[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr];
+                                    ~~~ ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:248:58: warning: implicit conversion changes signedness: 'int' to 'std::vector<std::vector<std::vector<long double>>>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = act[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr];
+                                              ~~~~~~~ ~~~^~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:248:63: warning: implicit conversion changes signedness: 'int' to 'std::vector<std::vector<long double>>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = act[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr];
+                                              ~~~~~~~         ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:248:67: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = act[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr];
+                                              ~~~~~~~             ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:248:83: warning: implicit conversion changes signedness: 'int' to 'std::vector<std::vector<std::vector<long double>>>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = act[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr];
+                                                                        ~~~~~~ ~~~^~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:248:88: warning: implicit conversion changes signedness: 'int' to 'std::vector<std::vector<long double>>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = act[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr];
+                                                                        ~~~~~~         ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:248:92: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    long double c = act[pr] * weights[ls - 1][nw][pr] + biases[ls - 1][nw][pr];
+                                                                        ~~~~~~             ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:266:34: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<long double>> delta = mult(ders, err); //multiplying the error to the input of layer
+                                 ^~
+                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:272:80: warning: implicit conversion changes signedness: 'int' to 'unsigned long long' [clang-diagnostic-sign-conversion]
+            vector<long double> n = dotProd(transpose(weights[weights.size() - l + 1]), transpose(delta)); //express the error in terms of the output of the layer
+                                                                             ~ ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:273:58: warning: implicit conversion changes signedness: 'int' to 'unsigned long long' [clang-diagnostic-sign-conversion]
+            delta = transpose(mult(n, der(zs[zs.size() - l - 1]))); //multiplying the error to the input of layer
+                                                       ~ ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:274:30: warning: implicit conversion changes signedness: 'int' to 'unsigned long long' [clang-diagnostic-sign-conversion]
+            nbb[nbb.size() - l] = delta;
+                           ~ ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:275:30: warning: implicit conversion changes signedness: 'int' to 'unsigned long long' [clang-diagnostic-sign-conversion]
+            nbw[nbw.size() - l] = dotProd(acts[acts.size() - l - 1], delta);
+                           ~ ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:275:62: warning: implicit conversion changes signedness: 'int' to 'unsigned long long' [clang-diagnostic-sign-conversion]
+            nbw[nbw.size() - l] = dotProd(acts[acts.size() - l - 1], delta);
+                                                           ~ ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:281:57: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    long double gitgood(vector<vector<vector<long double>>> testData) {
+                                                        ^~
+                                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:360:27: warning: comparison of integers of different signs: 'int' and 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-compare]
+        for (int i = 0; i < a.size(); i++) {
+                        ~ ^ ~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:361:19: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+            if (a[max] < a[i]) {
+                ~ ^~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:361:28: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+            if (a[max] < a[i]) {
+                         ~ ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:368:30: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<long double>> transpose(vector<vector<long double>> st) {
+                             ^~
+                             > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:368:68: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<long double>> transpose(vector<vector<long double>> st) {
+                                                                   ^~
+                                                                   > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:369:34: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<long double>> ed;
+                                 ^~
+                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:382:30: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<long double>> dotProd(vector<long double> f, vector<vector<long double>> s) {
+                             ^~
+                             > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:382:89: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<long double>> dotProd(vector<long double> f, vector<vector<long double>> s) {
+                                                                                        ^~
+                                                                                        > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:383:34: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<long double>> result;
+                                 ^~
+                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:398:58: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<long double> dotProd(vector<vector<long double>>f, vector<vector<long double>> s) {
+                                                         ^~
+                                                         > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:398:88: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<long double> dotProd(vector<vector<long double>>f, vector<vector<long double>> s) {
+                                                                                       ^~
+                                                                                       > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:400:67: warning: implicit conversion changes signedness: 'int' to 'unsigned long long' [clang-diagnostic-sign-conversion]
+        s.resize(s.size() + static_cast<int>(s.size() < f.size()) * ((int)f.size() - (int)s.size()));
+                          ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:400:70: warning: use of old-style cast [clang-diagnostic-old-style-cast]
+        s.resize(s.size() + static_cast<int>(s.size() < f.size()) * ((int)f.size() - (int)s.size()));
+                                                                     ^    ~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:400:86: warning: use of old-style cast [clang-diagnostic-old-style-cast]
+        s.resize(s.size() + static_cast<int>(s.size() < f.size()) * ((int)f.size() - (int)s.size()));
+                                                                                     ^    ~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:401:67: warning: implicit conversion changes signedness: 'int' to 'unsigned long long' [clang-diagnostic-sign-conversion]
+        f.resize(f.size() + static_cast<int>(f.size() < s.size()) * ((int)s.size() - (int)f.size()));
+                          ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:401:70: warning: use of old-style cast [clang-diagnostic-old-style-cast]
+        f.resize(f.size() + static_cast<int>(f.size() < s.size()) * ((int)s.size() - (int)f.size()));
+                                                                     ^    ~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:401:86: warning: use of old-style cast [clang-diagnostic-old-style-cast]
+        f.resize(f.size() + static_cast<int>(f.size() < s.size()) * ((int)s.size() - (int)f.size()));
+                                                                                     ^    ~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:410:67: warning: implicit conversion changes signedness: 'int' to 'unsigned long long' [clang-diagnostic-sign-conversion]
+        s.resize(s.size() + static_cast<int>(s.size() < f.size()) * ((int)f.size() - (int)s.size()));
+                          ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:410:70: warning: use of old-style cast [clang-diagnostic-old-style-cast]
+        s.resize(s.size() + static_cast<int>(s.size() < f.size()) * ((int)f.size() - (int)s.size()));
+                                                                     ^    ~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:410:86: warning: use of old-style cast [clang-diagnostic-old-style-cast]
+        s.resize(s.size() + static_cast<int>(s.size() < f.size()) * ((int)f.size() - (int)s.size()));
+                                                                                     ^    ~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:411:67: warning: implicit conversion changes signedness: 'int' to 'unsigned long long' [clang-diagnostic-sign-conversion]
+        f.resize(f.size() + static_cast<int>(f.size() < s.size()) * ((int)s.size() - (int)f.size()));
+                          ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:411:70: warning: use of old-style cast [clang-diagnostic-old-style-cast]
+        f.resize(f.size() + static_cast<int>(f.size() < s.size()) * ((int)s.size() - (int)f.size()));
+                                                                     ^    ~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:411:86: warning: use of old-style cast [clang-diagnostic-old-style-cast]
+        f.resize(f.size() + static_cast<int>(f.size() < s.size()) * ((int)s.size() - (int)f.size()));
+                                                                                     ^    ~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:419:30: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<long double>> shape(vector<vector<long double>> in) {
+                             ^~
+                             > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:419:64: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<long double>> shape(vector<vector<long double>> in) {
+                                                               ^~
+                                                               > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:420:34: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<long double>> out;
+                                 ^~
+                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:427:37: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<vector<long double>>> shape(vector<vector<vector<long double>>> in) {
+                                    ^~
+                                    > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:427:79: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<vector<long double>>> shape(vector<vector<vector<long double>>> in) {
+                                                                              ^~
+                                                                              > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:428:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> out;
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:436:30: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<long double>> mult(vector<long double> f, vector<long double> s) {
+                             ^~
+                             > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:437:34: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<long double>> result;
+                                 ^~
+                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:452:20: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+        for (int i : sizes) {
+                   ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:456:39: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        for (vector<vector<long double>> x : biases) {
+                                      ^~
+                                      > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:456:44: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+        for (vector<vector<long double>> x : biases) {
+                                           ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:457:40: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+            for (vector<long double> y : x) {
+                                       ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:458:36: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+                for (long double z : y) {
+                                   ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:466:39: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        for (vector<vector<long double>> x : weights) {
+                                      ^~
+                                      > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:466:44: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+        for (vector<vector<long double>> x : weights) {
+                                           ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:467:40: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+            for (vector<long double> y : x) {
+                                       ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:468:36: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+                for (long double z : y) {
+                                   ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:478:37: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<vector<long double>>> loaddata(string path, vector<int> szs, int best) {
+                                    ^~
+                                    > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:479:41: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<vector<long double>>> result;
+                                        ^~
+                                        > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:480:34: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+        vector<vector<long double>> sr;
+                                 ^~
+                                 > >
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:489:41: warning: implicit conversion changes signedness: 'int' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                vector<long double> out(static_cast<int>(szs[szs.size() - 1]));
+                                    ~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:491:29: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+                for (char c : line) {
+                            ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:510:29: warning: implicit conversion loses integer precision: 'long long' to 'int' [clang-diagnostic-shorten-64-to-32]
+                if (isdigit(atoll(buf.c_str()))) {
+                    ~~~~~~~ ^~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:511:25: warning: implicit conversion changes signedness: 'long long' to 'std::vector<long double>::size_type' (aka 'unsigned long long') [clang-diagnostic-sign-conversion]
+                    out[atoll(buf.c_str())] = best;
+                    ~~~ ^~~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:527:13: warning: unknown pragma ignored [clang-diagnostic-unknown-pragmas]
+#pragma GCC optimize("O3, fast-math")
+            ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:528:13: warning: unknown pragma ignored [clang-diagnostic-unknown-pragmas]
+#pragma GCC target("avx2")
+            ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:529:6: warning: no previous prototype for function 'u' [clang-diagnostic-missing-prototypes]
+void u(Network& net, vector<string> paths, string saveAs, vector<int> st, int best, long double eta, int howMany, int MiniBatchSize, long double lambda, int ZeroIsSilentOneIsInformativeTwoIsAll) {
+     ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:529:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
+void u(Network& net, vector<string> paths, string saveAs, vector<int> st, int best, long double eta, int howMany, int MiniBatchSize, long double lambda, int ZeroIsSilentOneIsInformativeTwoIsAll) {
+^
+static 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:529:51: warning: unused parameter 'saveAs' [clang-diagnostic-unused-parameter]
+void u(Network& net, vector<string> paths, string saveAs, vector<int> st, int best, long double eta, int howMany, int MiniBatchSize, long double lambda, int ZeroIsSilentOneIsInformativeTwoIsAll) {
+                                                  ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:531:60: warning: constructor call from initializer list is incompatible with C++98 [clang-diagnostic-c++98-compat]
+    shuffle(begin(paths), end(paths), default_random_engine{});
+                                                           ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:531:60: warning: generalized initializer lists are incompatible with C++98 [clang-diagnostic-c++98-compat]
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:532:37: warning: consecutive right angle brackets are incompatible with C++98 (use '> >') [clang-diagnostic-c++98-compat]
+    vector<vector<vector<long double>>> val;
+                                    ^~
+                                    > > 
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:533:19: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+    for (string p : paths) {
+                  ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:537:60: warning: constructor call from initializer list is incompatible with C++98 [clang-diagnostic-c++98-compat]
+        shuffle(begin(val), end(val), default_random_engine{});
+                                                           ^~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:537:60: warning: generalized initializer lists are incompatible with C++98 [clang-diagnostic-c++98-compat]
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:544:22: warning: initialization of initializer_list object is incompatible with C++98 [clang-diagnostic-c++98-compat]
+    vector<int> st = { 8, 69, 69, 10 };
+                     ^~~~~~~~~~~~~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:550:9: warning: variable 'ct' set but not used [clang-diagnostic-unused-but-set-variable]
+    int ct = 0;
+        ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:551:16: warning: 'auto' type specifier is incompatible with C++98 [clang-diagnostic-c++98-compat]
+    for (const auto& dirEntry : recursive_directory_iterator(samps)) {
+               ^~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:551:31: warning: range-based for loop is incompatible with C++98 [clang-diagnostic-c++98-compat]
+    for (const auto& dirEntry : recursive_directory_iterator(samps)) {
+                              ^
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:558:60: warning: constructor call from initializer list is incompatible with C++98 [clang-diagnostic-c++98-compat]
+    shuffle(begin(paths), end(paths), default_random_engine{ 69 });
+                                                           ^~~~~~
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:558:60: warning: generalized initializer lists are incompatible with C++98 [clang-diagnostic-c++98-compat]
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp:600:2: warning: C++98 requires newline at end of file [clang-diagnostic-c++98-compat-pedantic]
+}
+ ^

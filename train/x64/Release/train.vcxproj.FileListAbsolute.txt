@@ -1,0 +1,2 @@
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\x64\Release\train.exe.lastcodeanalysissucceeded
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\x64\Release\NativeCodeAnalysis.read.1.tlog

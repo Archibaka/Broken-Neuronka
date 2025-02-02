@@ -1,0 +1,24 @@
+﻿  train.cpp
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(2,9): warning C4068: unknown pragma 'GCC'
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(3,9): warning C4068: unknown pragma 'GCC'
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(138,45): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(140,52): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(141,44): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(141,65): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(141,70): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(141,74): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(141,94): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(141,99): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(141,103): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(240,41): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(242,48): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(243,53): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(243,80): warning C4244: 'argument': conversion from 'int64_t' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(536,25): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\mirop\Documents\Arduino\libraries\Network\train\train\train.cpp(527,17): warning C4101: 'sb': unreferenced local variable
+  Generating code
+  4 of 805 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    7 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  train.vcxproj -> C:\Users\mirop\Documents\Arduino\libraries\Network\train\Release\train.exe
